@@ -1,0 +1,13 @@
+<textarea style="width: 100%" rows="10" ng-model="query"></textarea>
+<div style="text-align: right;">
+ <button ng-click="submitQuery()">Submit Query</button>
+</div>
+<div ng-show="results.results.length == 0"><em>No data to show</em></div>
+<table border="1" ng-show="results.results.length > 0">
+ <tr>
+  <th ng-repeat="col in results.headers">{{col}}</th>
+ </tr>
+ <tr ng-repeat="row in results.results">
+  <td ng-repeat="col in row">{{col}}</td>
+ </tr>
+</table>
